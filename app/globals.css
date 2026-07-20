@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #11130f;
+  color: #f4e9d8;
+  font-family: var(--font-inter), sans-serif;
+}
+
+::selection {
+  background: rgba(184, 143, 74, 0.4);
+  color: white;
+}
+
+@layer base {
+  body {
+    @apply text-cream antialiased;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-[2rem] border border-white/10 bg-white/10 backdrop-blur-xl;
+  }
+
+  .section-title {
+    @apply font-display text-3xl sm:text-4xl text-cream;
+  }
+}
