@@ -56,8 +56,10 @@ export default function Home() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="grid items-center gap-10 py-10 lg:grid-cols-[0.95fr_1.05fr]"
+          className="relative grid items-center gap-10 py-10 lg:grid-cols-[0.95fr_1.05fr]"
         >
+          <div className="pointer-events-none absolute -left-12 top-16 hidden h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(184,143,74,0.16),transparent_55%)] blur-3xl lg:block" />
+          <div className="pointer-events-none absolute right-0 bottom-10 hidden h-60 w-60 rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.08),transparent_55%)] blur-3xl lg:block" />
           <div className="max-w-2xl">
             <p className="text-[0.72rem] uppercase tracking-[0.45em] text-gold">Palacete Burmester • Porto</p>
             <h1 className="mt-6 font-display text-5xl leading-[0.95] text-cream sm:text-6xl lg:text-7xl">

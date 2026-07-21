@@ -1,9 +1,14 @@
+import type { StaticImageData } from 'next/image';
+import burmesterImage from '../images/edited/book-house-memory-pretty.png';
+import gardenImage from '../images/edited/book-reading-practice-pretty.png';
+import echoesImage from '../images/edited/book-sound-memory-pretty.png';
+
 export type Book = {
   id: string;
   title: string;
   subtitle: string;
   category: string;
-  image: string;
+  image: StaticImageData | string;
   metadata: string[];
   story: string;
   quotes: string[];
@@ -44,7 +49,7 @@ export const books: Book[] = [
     title: 'Burmester in the Margins',
     subtitle: 'A quiet reconstruction of domestic life',
     category: 'House memory',
-    image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80',
+    image: burmesterImage,
     metadata: ['1910s', 'Private archive', 'Paper and photograph'],
     story:
       'This book unspools the intimate rhythms of a household from fragments, letters and annotations left across the house.',
@@ -58,7 +63,7 @@ export const books: Book[] = [
     title: 'The Garden of Marginal Notes',
     subtitle: 'Annotations in motion',
     category: 'Reading practice',
-    image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
+    image: gardenImage,
     metadata: ['Annotated copy', 'Urban memory', 'Field notes'],
     story:
       'A journey through the traces left by readers who treated books as places of dwelling rather than ownership.',
@@ -72,7 +77,7 @@ export const books: Book[] = [
     title: 'Echoes of the Study',
     subtitle: 'Listening to the archive',
     category: 'Sound and memory',
-    image: 'https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=80',
+    image: echoesImage,
     metadata: ['Audio fragments', 'Oral history', 'Interviews'],
     story:
       'A layered portrait of the house through voices, pauses and intimate recollections gathered over time.',

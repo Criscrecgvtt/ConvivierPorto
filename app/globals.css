@@ -37,4 +37,20 @@ body {
   .section-title {
     @apply font-display text-3xl sm:text-4xl text-cream;
   }
+
+  .magical-surface {
+    @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#131813]/80 shadow-soft;
+  }
+
+  .silo-sheen {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(184,143,74,0.18) 0%, transparent 55%);
+    filter: blur(40px);
+    pointer-events: none;
+  }
 }
