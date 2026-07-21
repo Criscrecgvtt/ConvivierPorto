@@ -3,54 +3,82 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
+  --forest: #1E3A34;
+  --forest-deep: #132A25;
+  --parchment: #F4EEDF;
+  --warm-white: #FBF8F2;
+  --terracotta: #9A5A36;
+  --muted-gold: #C8A96A;
+  --ink: #272725;
+  --soft-ink: #5F625E;
+  --line: #D8CDBD;
 }
 
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background: #11130f;
-  color: #f4e9d8;
+  background: var(--warm-white);
+  color: var(--ink);
   font-family: var(--font-inter), sans-serif;
 }
 
 ::selection {
-  background: rgba(184, 143, 74, 0.4);
-  color: white;
+  background: rgba(200, 169, 106, 0.45);
+  color: var(--ink);
 }
 
 @layer base {
+  *:focus-visible {
+    @apply outline outline-2 outline-offset-4 outline-terracotta;
+  }
+
   body {
-    @apply text-cream antialiased;
+    @apply text-ink antialiased;
+  }
+
+  p {
+    max-width: 75ch;
   }
 }
 
 @layer components {
-  .glass-panel {
-    @apply rounded-[2rem] border border-white/10 bg-white/10 backdrop-blur-xl;
+  .section-pad {
+    @apply py-20 md:py-28;
   }
 
-  .section-title {
-    @apply font-display text-3xl sm:text-4xl text-cream;
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.22em] text-muted-gold;
   }
 
-  .magical-surface {
-    @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#131813]/80 shadow-soft;
+  .btn-primary {
+    @apply inline-flex items-center justify-center border border-forest bg-forest px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-warm-white transition hover:bg-forest-deep disabled:cursor-not-allowed disabled:opacity-50;
   }
 
-  .silo-sheen {
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-    width: 8rem;
-    height: 8rem;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(184,143,74,0.18) 0%, transparent 55%);
-    filter: blur(40px);
-    pointer-events: none;
+  .btn-secondary {
+    @apply inline-flex items-center justify-center border border-line bg-transparent px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-forest transition hover:bg-parchment;
+  }
+
+  .nav-link {
+    @apply text-sm font-semibold uppercase tracking-[0.16em] text-warm-white/80 transition hover:text-warm-white;
+  }
+
+  .editorial-card {
+    @apply border border-line bg-warm-white;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

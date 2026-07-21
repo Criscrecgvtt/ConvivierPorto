@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Cormorant_Garamond, Inter } from 'next/font/google';
+import { SiteNav } from '@/components/layout/SiteNav';
 import './globals.css';
 
-const playfair = Playfair_Display({
+const display = Cormorant_Garamond({
   subsets: ['latin'],
   variable: '--font-playfair',
+  weight: ['400', '500', '600', '700'],
 });
 
 const inter = Inter({
@@ -13,16 +15,30 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Conviver | Casa dos Livros',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://convivier-porto.vercel.app'),
+  title: {
+    default: 'CONVIVER | Casa dos Livros',
+    template: '%s | CONVIVER',
+  },
   description:
-    'An immersive digital humanities experience for Casa dos Livros, where literature, memory and architecture breathe together.',
-  keywords: ['digital humanities', 'Casa dos Livros', 'Conviver', 'museum website'],
+    'A Digital Humanities communication ecosystem for Casa dos Livros and Palacete Burmester in Porto.',
+  keywords: ['digital humanities', 'Casa dos Livros', 'Palacete Burmester', 'Porto Cultural Passport'],
+  openGraph: {
+    title: 'CONVIVER | Casa dos Livros',
+    description: 'Stay. Read. Breathe. A house where books live.',
+    url: '/',
+    siteName: 'CONVIVER',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${display.variable} ${inter.variable}`}>
+      <body>
+        <SiteNav />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,14 +1,22 @@
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}', './lib/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}', './content/**/*.{js,ts,jsx,tsx,mdx}', './lib/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
-        forest: '#223b2d',
-        cream: '#f4e9d8',
-        gold: '#b88f4a',
-        charcoal: '#171715',
+        forest: '#1E3A34',
+        'forest-deep': '#132A25',
+        parchment: '#F4EEDF',
+        'warm-white': '#FBF8F2',
+        terracotta: '#9A5A36',
+        'muted-gold': '#C8A96A',
+        ink: '#272725',
+        'soft-ink': '#5F625E',
+        line: '#D8CDBD',
+        cream: '#F4EEDF',
+        gold: '#C8A96A',
+        charcoal: '#272725',
       },
       fontFamily: {
         display: ['var(--font-playfair)'],
