@@ -39,6 +39,8 @@ const groups = [
       ['Explore the House', '/explore-the-house'],
       ['Stories', '/stories'],
       ['Podcast', '/podcast'],
+      ['Experience spaces', '/conviver/spaces'],
+      ['Ecosystem', '/conviver/ecosystem'],
       ['Digital experiences', '/explore'],
     ],
   },
@@ -92,6 +94,7 @@ export function SiteNav() {
               </div>
             ))}
             <Link href="/passport" className="py-2 text-lg" onClick={() => setOpen(false)}>Passport</Link>
+            <Link href="/conviver/ecosystem" className="py-2 text-lg" onClick={() => setOpen(false)}>Ecosystem</Link>
             <Link href="/visit" className="py-2 text-lg" onClick={() => setOpen(false)}>Visit</Link>
             <Link href="/contact" className="py-2 text-lg" onClick={() => setOpen(false)}>Contact</Link>
             <span className="text-xs uppercase tracking-[0.22em] text-muted-gold">PT / EN</span>

@@ -5,6 +5,7 @@ import { trackEvent } from '@/lib/analytics';
 
 export function AddToCalendarButton({ event }: { event: CulturalEvent }) {
   function downloadIcs() {
+    if (!event.date) return;
     const date = event.date.replaceAll('-', '');
     const ics = [
       'BEGIN:VCALENDAR',
@@ -30,5 +31,5 @@ export function AddToCalendarButton({ event }: { event: CulturalEvent }) {
     trackEvent('event_add_calendar', { slug: event.slug });
   }
 
-  return <button className="btn-secondary" onClick={downloadIcs}>Add to calendar</button>;
+  return <button className="btn-secondary" onClick={downloadIcs} disabled={!event.date}>Add to calendar</button>;
 }

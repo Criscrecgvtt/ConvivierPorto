@@ -3,7 +3,9 @@ import { notFound } from 'next/navigation';
 import { MetadataTable } from '@/components/editorial/MetadataTable';
 import { StatusBadge } from '@/components/editorial/StatusBadge';
 import { bookItems } from '@/content/books';
+import { events } from '@/content/events';
 import { officialCollections } from '@/content/official';
+import { podcastEpisodes } from '@/content/podcast';
 import { pageMetadata } from '@/lib/seo';
 
 export function generateStaticParams() {
@@ -20,6 +22,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 export default function CollectionItemPage({ params }: { params: { slug: string } }) {
   const collection = officialCollections.find((record) => record.slug === params.slug);
   if (collection) {
+    const relatedEvents = events.filter((event) => event.relatedCollectionSlugs?.includes(collection.slug));
+    const relatedPodcast = podcastEpisodes.find((episode) => relatedEvents.some((event) => event.relatedPodcastSlug === episode.slug));
+
     return (
       <main className="pt-20">
         <section className="section-pad bg-parchment">
@@ -40,6 +45,22 @@ export default function CollectionItemPage({ params }: { params: { slug: string 
               ['Catalogue status', collection.catalogueStatus],
               ['Source', collection.sourceUrl],
             ]} />
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              <div className="border border-line bg-parchment p-5">
+                <h2 className="font-display text-3xl text-ink">Related programme</h2>
+                {relatedEvents.length ? relatedEvents.map((event) => (
+                  <a key={event.slug} className="mt-2 block text-forest underline" href={`/programme/events/${event.slug}`}>{event.title}</a>
+                )) : <p className="mt-2 text-soft-ink">Programme connection pending.</p>}
+              </div>
+              <div className="border border-line bg-parchment p-5">
+                <h2 className="font-display text-3xl text-ink">Related podcast</h2>
+                {relatedPodcast ? <a className="mt-2 block text-forest underline" href={`/podcast/${relatedPodcast.slug}`}>{relatedPodcast.title}</a> : <p className="mt-2 text-soft-ink">Podcast connection pending.</p>}
+              </div>
+              <div className="border border-line bg-parchment p-5">
+                <h2 className="font-display text-3xl text-ink">Explore location</h2>
+                <a className="mt-2 block text-forest underline" href="/explore-the-house">Explore the House</a>
+              </div>
+            </div>
           </div>
         </section>
       </main>

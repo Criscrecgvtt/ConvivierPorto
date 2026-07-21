@@ -70,7 +70,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">Current events and exhibitions</p>
             <h2 className="mt-4 font-display text-5xl leading-tight text-ink">{nextEvent.title}</h2>
-            <p className="mt-4 text-soft-ink">{formatEventDate(nextEvent.date)} · {nextEvent.language} · {nextEvent.location}</p>
+            <p className="mt-4 text-soft-ink">{nextEvent.date ? formatEventDate(nextEvent.date) : 'Date pending'} · {nextEvent.language} · {nextEvent.location}</p>
             <p className="mt-5 text-lg leading-8 text-soft-ink">{nextEvent.shortDescription}</p>
             <StatusBadge status="Proposed CONVIVER feature" />
             <div className="mt-7 flex flex-wrap gap-3">
