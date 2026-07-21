@@ -3,18 +3,49 @@ import { notFound } from 'next/navigation';
 import { MetadataTable } from '@/components/editorial/MetadataTable';
 import { StatusBadge } from '@/components/editorial/StatusBadge';
 import { bookItems } from '@/content/books';
+import { officialCollections } from '@/content/official';
 import { pageMetadata } from '@/lib/seo';
 
 export function generateStaticParams() {
-  return bookItems.map((item) => ({ slug: item.slug }));
+  return [...officialCollections.map((item) => ({ slug: item.slug })), ...bookItems.map((item) => ({ slug: item.slug }))];
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
+  const collection = officialCollections.find((record) => record.slug === params.slug);
+  if (collection) return pageMetadata(collection.name, collection.summary, `/collections/${collection.slug}`);
   const item = bookItems.find((record) => record.slug === params.slug);
   return item ? pageMetadata(item.title, item.shortDescription, `/collections/${item.slug}`) : {};
 }
 
 export default function CollectionItemPage({ params }: { params: { slug: string } }) {
+  const collection = officialCollections.find((record) => record.slug === params.slug);
+  if (collection) {
+    return (
+      <main className="pt-20">
+        <section className="section-pad bg-parchment">
+          <div className="mx-auto max-w-5xl px-6 sm:px-8">
+            <StatusBadge status="Verified from official website" />
+            <h1 className="mt-5 font-display text-6xl leading-tight text-ink">{collection.name}</h1>
+            <p className="mt-3 text-lg font-semibold text-terracotta">{collection.lifespan} {collection.role ? `· ${collection.role}` : ''}</p>
+            <p className="mt-6 text-lg leading-8 text-soft-ink">{collection.summary}</p>
+            <a className="btn-secondary mt-7" href={collection.sourceUrl} target="_blank" rel="noreferrer">Official source</a>
+          </div>
+        </section>
+        <section className="section-pad bg-warm-white">
+          <div className="mx-auto max-w-5xl px-6 sm:px-8">
+            <MetadataTable rows={[
+              ['Format', collection.format],
+              ['Processing status', collection.processingStatus],
+              ['Access status', collection.accessStatus],
+              ['Catalogue status', collection.catalogueStatus],
+              ['Source', collection.sourceUrl],
+            ]} />
+          </div>
+        </section>
+      </main>
+    );
+  }
+
   const item = bookItems.find((record) => record.slug === params.slug);
   if (!item) notFound();
 

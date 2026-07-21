@@ -3,13 +3,45 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-const primary = [
-  ['Explore', '/explore'],
-  ['Collections', '/collections'],
-  ['Passport', '/passport'],
-  ['Podcast', '/podcast'],
-  ['Events', '/events'],
-  ['Visit', '/visit'],
+const groups = [
+  {
+    label: 'Discover',
+    href: '/about',
+    items: [
+      ['About Casa dos Livros', '/about/casa-dos-livros'],
+      ['Mission', '/about/mission'],
+      ['Palacete Burmester', '/about/palacete-burmester'],
+      ['Team', '/about/team'],
+    ],
+  },
+  {
+    label: 'Collections',
+    href: '/collections',
+    items: [
+      ['All collections', '/collections'],
+      ['Research tools', '/research-tools'],
+      ['Library catalogues', '/catalogues'],
+    ],
+  },
+  {
+    label: 'Programme',
+    href: '/programme',
+    items: [
+      ['Upcoming events', '/events'],
+      ['Exhibitions', '/exhibitions'],
+      ['Publications', '/publications'],
+    ],
+  },
+  {
+    label: 'CONVIVER',
+    href: '/explore',
+    items: [
+      ['Explore the House', '/explore-the-house'],
+      ['Stories', '/stories'],
+      ['Podcast', '/podcast'],
+      ['Digital experiences', '/explore'],
+    ],
+  },
 ];
 
 export function SiteNav() {
@@ -18,11 +50,23 @@ export function SiteNav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-warm-white/15 bg-forest-deep/88 text-warm-white backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-8 lg:px-12" aria-label="Main navigation">
-        <Link href="/" className="font-display text-2xl tracking-wide">CONVIVER</Link>
-        <div className="hidden items-center gap-6 lg:flex">
-          {primary.map(([label, href]) => <Link key={href} href={href} className="nav-link">{label}</Link>)}
-          <Link href="/about" className="nav-link">About</Link>
-          <Link href="/partners" className="nav-link">Partners</Link>
+        <Link href="/" className="leading-tight">
+          <span className="block font-display text-2xl tracking-wide">Casa dos Livros</span>
+          <span className="block text-[0.62rem] uppercase tracking-[0.2em] text-muted-gold">CONVIVER experience layer</span>
+        </Link>
+        <div className="hidden items-center gap-5 lg:flex">
+          {groups.map((group) => (
+            <div key={group.label} className="group relative">
+              <Link href={group.href} className="nav-link">{group.label}</Link>
+              <div className="invisible absolute left-0 top-full w-72 border border-warm-white/15 bg-forest-deep p-3 opacity-0 shadow-soft transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                {group.items.map(([label, href]) => (
+                  <Link key={href} href={href} className="block px-3 py-2 text-sm text-warm-white/82 hover:bg-warm-white/10 hover:text-warm-white">{label}</Link>
+                ))}
+              </div>
+            </div>
+          ))}
+          <Link href="/passport" className="nav-link">Passport</Link>
+          <Link href="/visit" className="nav-link">Visit</Link>
           <span className="text-xs uppercase tracking-[0.22em] text-muted-gold">PT / EN</span>
           <Link href="/visit" className="btn-primary py-2">Plan your visit</Link>
         </div>
@@ -39,9 +83,17 @@ export function SiteNav() {
       {open ? (
         <div id="mobile-nav" className="border-t border-warm-white/15 bg-forest-deep px-4 py-4 lg:hidden">
           <div className="grid gap-3">
-            {[...primary, ['About', '/about'], ['Partners', '/partners']].map(([label, href]) => (
-              <Link key={href} href={href} className="py-2 text-lg" onClick={() => setOpen(false)}>{label}</Link>
+            {groups.map((group) => (
+              <div key={group.label} className="border-b border-warm-white/10 pb-2">
+                <Link href={group.href} className="block py-2 text-lg" onClick={() => setOpen(false)}>{group.label}</Link>
+                {group.items.map(([label, href]) => (
+                  <Link key={href} href={href} className="block py-1 pl-4 text-sm text-warm-white/75" onClick={() => setOpen(false)}>{label}</Link>
+                ))}
+              </div>
             ))}
+            <Link href="/passport" className="py-2 text-lg" onClick={() => setOpen(false)}>Passport</Link>
+            <Link href="/visit" className="py-2 text-lg" onClick={() => setOpen(false)}>Visit</Link>
+            <Link href="/contact" className="py-2 text-lg" onClick={() => setOpen(false)}>Contact</Link>
             <span className="text-xs uppercase tracking-[0.22em] text-muted-gold">PT / EN</span>
           </div>
         </div>

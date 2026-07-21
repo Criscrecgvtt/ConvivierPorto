@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { EditorialHero } from '@/components/editorial/EditorialHero';
 import { SectionHeading } from '@/components/editorial/SectionHeading';
 import { events } from '@/content/events';
+import { officialContacts } from '@/content/official';
 import { imageAlt, siteImages } from '@/lib/assets';
 import { pageMetadata } from '@/lib/seo';
 
@@ -10,15 +11,18 @@ export const metadata = pageMetadata('Visit', 'Practical visitor information for
 export default function VisitPage() {
   return (
     <main>
-      <EditorialHero eyebrow="Visit" title="Plan a slow encounter with the house." subtitle="Visitor details are intentionally marked pending until confirmed by Casa dos Livros." image={siteImages.heroDoorway} alt={imageAlt.heroDoorway} />
+      <EditorialHero eyebrow="Visit" title="Plan a slow encounter with Casa dos Livros." subtitle="Official address, hours and contact details are preserved from the institutional website." image={siteImages.heroDoorway} alt={imageAlt.heroDoorway} />
       <section className="section-pad bg-warm-white">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 sm:px-8 lg:grid-cols-3 lg:px-12">
           {[
-            ['Address', 'Information pending confirmation by Casa dos Livros.'],
-            ['Opening hours', 'Information pending confirmation by Casa dos Livros.'],
+            ['Address', officialContacts.address],
+            ['Building hours', officialContacts.buildingHours],
+            ['Reading/reference room', officialContacts.readingRoomHours],
+            ['Telephone', officialContacts.telephone],
+            ['Official email', officialContacts.email],
             ['Accessibility', 'Access information, lifts, seating and sensory details pending institutional confirmation.'],
             ['Languages', 'Portuguese and English visitor information proposed for the pilot.'],
-            ['How to arrive', 'Map embed or official map link pending confirmation.'],
+            ['How to arrive', 'Map embed pending; use the official address above.'],
             ['Groups and schools', 'Group visit process and booking contact pending confirmation.'],
           ].map(([title, copy]) => (
             <div key={title} className="border border-line bg-parchment p-6">

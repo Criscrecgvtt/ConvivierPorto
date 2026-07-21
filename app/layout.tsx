@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Inter } from 'next/font/google';
 import { SiteNav } from '@/components/layout/SiteNav';
+import { SiteFooter } from '@/components/layout/SiteFooter';
 import './globals.css';
 
 const display = Cormorant_Garamond({
@@ -36,8 +37,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${display.variable} ${inter.variable}`}>
       <body>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-warm-white focus:px-4 focus:py-3 focus:text-forest">
+          Skip to content
+        </a>
         <SiteNav />
-        {children}
+        <div id="main-content">{children}</div>
+        <SiteFooter />
       </body>
     </html>
   );
