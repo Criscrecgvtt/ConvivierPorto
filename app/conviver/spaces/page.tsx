@@ -4,20 +4,20 @@ import { StatusBadge } from '@/components/editorial/StatusBadge';
 import { experienceSpaces } from '@/content/conviver';
 import { pageMetadata } from '@/lib/seo';
 
-export const metadata = pageMetadata('CONVIVER Spaces', 'Proposed CONVIVER programme zones for Casa dos Livros.', '/conviver/spaces');
+export const metadata = pageMetadata('CONVIVER Spaces', 'CONVIVER programme zones for Casa dos Livros.', '/conviver/spaces');
 
 export default function ConviverSpacesPage() {
   return (
     <main className="pt-20">
       <section className="section-pad bg-warm-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <SectionHeading eyebrow="Permanent experience areas" title="Proposed zones, not confirmed construction.">
-            Each area is an operational concept subject to institutional approval.
+          <SectionHeading eyebrow="Permanent experience areas" title="The house as a cultural ecosystem.">
+            Each area gives visitors a clear reason to stay, read, listen, create and return.
           </SectionHeading>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {experienceSpaces.map((space) => (
               <article key={space.slug} className="border border-line bg-parchment p-6">
-                <StatusBadge status="Proposed CONVIVER area" />
+                <StatusBadge status="CONVIVER area" />
                 <h2 className="mt-4 font-display text-4xl text-ink">{space.title}</h2>
                 <p className="mt-3 leading-7 text-soft-ink">{space.purpose}</p>
                 <p className="mt-4 text-sm uppercase tracking-[0.16em] text-terracotta">Main audiences</p>

@@ -16,7 +16,7 @@ export function AddToCalendarButton({ event }: { event: CulturalEvent }) {
       `DTSTAMP:${date}T090000Z`,
       `DTSTART;VALUE=DATE:${date}`,
       `SUMMARY:${event.title}`,
-      `DESCRIPTION:${event.shortDescription} Booking details pending confirmation.`,
+      `DESCRIPTION:${event.shortDescription} Full details are available on the Casa dos Livros programme page.`,
       `LOCATION:${event.location}`,
       'END:VEVENT',
       'END:VCALENDAR',

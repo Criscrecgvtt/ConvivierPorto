@@ -14,18 +14,18 @@ export default function TeamPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {officialTeam.map((person) => (
               <article key={person.name} className="border border-line bg-parchment p-6">
-                <StatusBadge status="Verified from official website" />
+                <StatusBadge status="Casa dos Livros team" />
                 <h2 className="mt-4 font-display text-4xl text-ink">{person.name}</h2>
                 <p className="mt-2 text-soft-ink">{person.role}</p>
               </article>
             ))}
           </div>
           <div className="mt-10 border border-line bg-parchment p-6">
-            <StatusBadge status="Pending institutional verification" />
+            <StatusBadge status="CONVIVER project team" />
             <h2 className="mt-4 font-display text-4xl text-ink">CONVIVER student project team</h2>
             <p className="mt-3 text-soft-ink">Names, roles and academic context should be inserted after institutional review.</p>
           </div>
-          <a className="btn-secondary mt-8" href={officialPages.team} target="_blank" rel="noreferrer">Official team page</a>
+          <a className="btn-secondary mt-8" href="/contact">Contact the team</a>
         </div>
       </section>
     </main>

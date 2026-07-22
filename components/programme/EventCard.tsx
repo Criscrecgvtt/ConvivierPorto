@@ -14,12 +14,12 @@ export function EventCard({ event, basePath = '/programme/events' }: { event: Cu
       ) : null}
       <div className="p-6">
         <div className="flex flex-wrap gap-2">
-          <StatusBadge status={event.institutionalVerification === 'verified' ? 'Confirmed' : event.institutionalVerification === 'proposed' ? 'Proposed' : 'Pending verification'} />
+          <StatusBadge status={event.institutionalVerification === 'verified' ? 'Confirmed' : event.institutionalVerification === 'proposed' ? 'Programme' : 'In development'} />
           {event.passportStampEligible ? <StatusBadge status="Passport stamp available" /> : null}
         </div>
         <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">{event.category} · {event.frequency}</p>
         <h3 className="mt-2 font-display text-4xl leading-tight text-ink">{event.title}</h3>
-        <p className="mt-3 text-sm text-soft-ink">{event.date ? formatEventDate(event.date) : 'Date pending'} · {event.language}</p>
+        <p className="mt-3 text-sm text-soft-ink">{event.date ? formatEventDate(event.date) : 'Date announced soon'} · {event.language}</p>
         <p className="mt-4 leading-7 text-soft-ink">{event.shortDescription}</p>
       </div>
     </Link>

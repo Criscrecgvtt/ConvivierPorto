@@ -10,7 +10,7 @@ export default function ProgrammeEventsPage() {
     <main className="pt-20">
       <section className="section-pad bg-parchment">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <SectionHeading eyebrow="Events" title="Upcoming, recurring and proposed programme events." />
+          <SectionHeading eyebrow="Events" title="Upcoming and recurring programme events." />
           <div className="mt-10"><ProgrammeFilters events={events} /></div>
         </div>
       </section>

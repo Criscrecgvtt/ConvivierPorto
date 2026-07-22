@@ -2,14 +2,14 @@ import { SectionHeading } from '@/components/editorial/SectionHeading';
 import { audienceJourneys, kpiGroups, planningTargets } from '@/content/conviver';
 import { pageMetadata } from '@/lib/seo';
 
-export const metadata = pageMetadata('Project Strategy', 'Internal BIP prototype strategy page for CONVIVER planning assumptions.', '/project/strategy');
+export const metadata = pageMetadata('Project Strategy', 'Internal BIP strategy page for CONVIVER planning.', '/project/strategy');
 
 export default function StrategyPage() {
   return (
     <main className="pt-20">
       <section className="section-pad bg-warm-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <SectionHeading eyebrow="Internal prototype strategy" title="Two-solution model.">
+          <SectionHeading eyebrow="Internal strategy" title="Two-solution model.">
             Official Casa dos Livros information remains the institutional foundation. CONVIVER adds discovery, recurring programme, passport journeys and measurement.
           </SectionHeading>
           <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -34,7 +34,7 @@ export default function StrategyPage() {
             ))}
           </div>
           <div className="mt-10 border border-line bg-parchment p-6">
-            <h2 className="font-display text-4xl text-ink">Working targets - pending baseline validation</h2>
+            <h2 className="font-display text-4xl text-ink">Working targets</h2>
             {planningTargets.map(([period, targets]) => <div key={period} className="mt-5"><h3 className="font-semibold text-ink">{period}</h3><p className="mt-2 text-soft-ink">{targets.join(' · ')}</p></div>)}
           </div>
         </div>

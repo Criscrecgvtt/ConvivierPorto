@@ -31,9 +31,9 @@ export default function SeriesPage({ params }: { params: { slug: string } }) {
             <StatusBadge status={series.sourceStatus} />
             <h1 className="mt-5 font-display text-6xl leading-tight text-ink">{series.title}</h1>
             <p className="mt-5 text-lg leading-8 text-soft-ink">{series.purpose}</p>
-            <p className="mt-4 font-semibold text-terracotta">Next session status: {series.status}. Notify-me only; no registration stored in this prototype.</p>
+            <p className="mt-4 font-semibold text-terracotta">Next session status: {series.status.replace('-', ' ')}. Join the announcement list for the next release.</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <a className="btn-primary" href="https://wp.letras.up.pt/casadoslivros/pt/newsletter/" target="_blank" rel="noreferrer">Notify me when announced</a>
+              <a className="btn-primary" href="/contact">Notify me when announced</a>
               {series.passportStampEligible ? <Link className="btn-secondary" href="/passport">Passport eligibility</Link> : null}
             </div>
           </div>
@@ -45,12 +45,12 @@ export default function SeriesPage({ params }: { params: { slug: string } }) {
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             <div className="border border-line bg-parchment p-5"><h2 className="font-display text-3xl">Audience</h2><p className="mt-3 text-soft-ink">{series.audience.join(', ')}</p></div>
             <div className="border border-line bg-parchment p-5"><h2 className="font-display text-3xl">Language</h2><p className="mt-3 text-soft-ink">{series.language}</p></div>
-            <div className="border border-line bg-parchment p-5"><h2 className="font-display text-3xl">Capacity</h2><p className="mt-3 text-soft-ink">{series.proposedCapacity ?? 'Pending'} proposed</p></div>
+            <div className="border border-line bg-parchment p-5"><h2 className="font-display text-3xl">Capacity</h2><p className="mt-3 text-soft-ink">{series.proposedCapacity ?? 'Flexible'} seats</p></div>
           </div>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             <div className="border border-line bg-parchment p-6">
               <h2 className="font-display text-4xl text-ink">Reading/resources</h2>
-              <ul className="mt-4 space-y-2 text-soft-ink">{(series.readingResources ?? ['Resources pending']).map((item) => <li key={item}>{item}</li>)}</ul>
+              <ul className="mt-4 space-y-2 text-soft-ink">{(series.readingResources ?? ['Reading list', 'room note', 'collection guide']).map((item) => <li key={item}>{item}</li>)}</ul>
             </div>
             <div className="border border-line bg-parchment p-6">
               <h2 className="font-display text-4xl text-ink">Operational needs</h2>

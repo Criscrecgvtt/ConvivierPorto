@@ -20,7 +20,7 @@ export default function ProgrammePage() {
           <div>
             <p className="eyebrow text-muted-gold">Programme</p>
             <h1 className="mt-4 font-display text-6xl leading-tight">A living cultural rhythm for Casa dos Livros.</h1>
-            <p className="mt-5 text-lg leading-8 text-warm-white/78">Recurring series, proposed pilots, exhibition memory and official publication pathways remain connected to the institution.</p>
+            <p className="mt-5 text-lg leading-8 text-warm-white/78">Recurring series, seasonal events, exhibition memory and publication pathways remain connected to the institution.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link className="btn-primary bg-warm-white text-forest hover:bg-parchment" href="/programme/events">Upcoming events</Link>
               <Link className="btn-secondary border-warm-white/40 text-warm-white hover:bg-warm-white/10" href="/programme/calendar">Calendar view</Link>
@@ -36,7 +36,7 @@ export default function ProgrammePage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <SectionHeading eyebrow="Featured event" title={featured.title}>{featured.shortDescription}</SectionHeading>
           <div className="mt-5 flex flex-wrap gap-2">
-            <StatusBadge status="Proposed" />
+            <StatusBadge status="Programme" />
             {featured.passportStampEligible ? <StatusBadge status="Passport stamp available" /> : null}
           </div>
           <Link className="btn-primary mt-7" href={`/programme/events/${featured.slug}`}>Open featured event</Link>

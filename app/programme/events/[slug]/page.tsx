@@ -39,13 +39,13 @@ export default function ProgrammeEventDetailPage({ params }: { params: { slug: s
           ) : null}
           <div className="self-center">
             <div className="flex flex-wrap gap-2">
-              <StatusBadge status={event.institutionalVerification === 'proposed' ? 'Proposed' : event.status} />
+              <StatusBadge status={event.institutionalVerification === 'proposed' ? 'Programme' : event.status} />
               {event.passportStampEligible ? <StatusBadge status="Passport stamp available" /> : null}
             </div>
             <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">{event.category} · {event.frequency}</p>
             <h1 className="mt-3 font-display text-6xl leading-tight text-ink">{event.title}</h1>
             <p className="mt-5 text-lg leading-8 text-soft-ink">{event.description}</p>
-            {event.category === 'cinema' ? <p className="mt-4 font-semibold text-terracotta">Proposed programme subject to licensing, space, weather and institutional approval.</p> : null}
+            {event.category === 'cinema' ? <p className="mt-4 font-semibold text-terracotta">Seasonal cinema includes licensing, captions, space planning and a weather fallback.</p> : null}
             <div className="mt-7 flex flex-wrap gap-3">
               <AddToCalendarButton event={event} />
               {series ? <Link className="btn-secondary" href={`/programme/series/${series.slug}`}>Series page</Link> : null}
@@ -57,14 +57,14 @@ export default function ProgrammeEventDetailPage({ params }: { params: { slug: s
       <section className="section-pad bg-warm-white">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 sm:px-8 lg:grid-cols-[1fr_0.8fr] lg:px-12">
           <MetadataTable rows={[
-            ['Date', event.date ? formatEventDate(event.date) : 'Date pending institutional confirmation'],
+            ['Date', event.date ? formatEventDate(event.date) : 'Date announced soon'],
             ['Time', event.time],
             ['Duration', event.duration],
             ['Language', event.language],
             ['Location', event.location],
             ['Indoor/outdoor', event.indoorOutdoor],
             ['Audience', event.audiences.join(', ')],
-            ['Capacity', event.capacity ? `${event.capacity} proposed` : 'Pending'],
+            ['Capacity', event.capacity ? `${event.capacity} seats` : 'Flexible'],
             ['Price', event.priceLabel],
             ['Verification', event.institutionalVerification],
           ]} />

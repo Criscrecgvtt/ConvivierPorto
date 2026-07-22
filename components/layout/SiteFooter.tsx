@@ -21,10 +21,11 @@ export function SiteFooter() {
           </div>
         </div>
         <div>
-          <p className="eyebrow text-muted-gold">Official source</p>
+          <p className="eyebrow text-muted-gold">Stay connected</p>
           <div className="mt-4 grid gap-2 text-sm">
-            <a href={officialPages.presentation} target="_blank" rel="noreferrer">Official website</a>
-            <a href={officialPages.newsletter} target="_blank" rel="noreferrer">Newsletter</a>
+            <Link href="/about/casa-dos-livros">Institution</Link>
+            <Link href="/programme">Programme</Link>
+            <Link href="/passport">Passport</Link>
             <Link href="/partners">Partners</Link>
             <span>PT / EN</span>
           </div>

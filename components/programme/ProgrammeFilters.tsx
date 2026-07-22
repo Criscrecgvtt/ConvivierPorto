@@ -30,7 +30,7 @@ export function ProgrammeFilters({ events }: { events: CulturalEvent[] }) {
           <table className="w-full min-w-[720px] text-left">
             <thead className="bg-forest text-warm-white"><tr><th className="p-4">Event</th><th className="p-4">Date</th><th className="p-4">Audience</th><th className="p-4">Status</th></tr></thead>
             <tbody>
-              {filtered.map((event) => <tr key={event.slug} className="border-t border-line"><td className="p-4">{event.title}</td><td className="p-4">{event.date ?? 'Date pending'}</td><td className="p-4">{event.audiences.join(', ')}</td><td className="p-4">{event.status}</td></tr>)}
+              {filtered.map((event) => <tr key={event.slug} className="border-t border-line"><td className="p-4">{event.title}</td><td className="p-4">{event.date ?? 'Date announced soon'}</td><td className="p-4">{event.audiences.join(', ')}</td><td className="p-4">{event.status.replace('-', ' ')}</td></tr>)}
             </tbody>
           </table>
         </div>

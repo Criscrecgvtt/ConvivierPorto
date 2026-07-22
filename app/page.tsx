@@ -38,7 +38,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:px-12">
           <div>
             <p className="eyebrow">Institutional identity</p>
-            <StatusBadge status="Verified from official website" />
+            <StatusBadge status="Casa dos Livros" />
           </div>
           <div>
             <h2 className="font-display text-5xl leading-tight text-ink md:text-7xl">{officialInstitution.fullName}</h2>
@@ -70,9 +70,9 @@ export default function Home() {
           <div>
             <p className="eyebrow">Current events and exhibitions</p>
             <h2 className="mt-4 font-display text-5xl leading-tight text-ink">{nextEvent.title}</h2>
-            <p className="mt-4 text-soft-ink">{nextEvent.date ? formatEventDate(nextEvent.date) : 'Date pending'} · {nextEvent.language} · {nextEvent.location}</p>
+            <p className="mt-4 text-soft-ink">{nextEvent.date ? formatEventDate(nextEvent.date) : 'Date announced soon'} · {nextEvent.language} · {nextEvent.location}</p>
             <p className="mt-5 text-lg leading-8 text-soft-ink">{nextEvent.shortDescription}</p>
-            <StatusBadge status="Proposed CONVIVER feature" />
+            <StatusBadge status="CONVIVER programme" />
             <div className="mt-7 flex flex-wrap gap-3">
               <Link className="btn-primary" href={`/events/${nextEvent.slug}`}>Event details</Link>
               <Link className="btn-secondary" href="/exhibitions">Exhibition catalogues</Link>
@@ -163,7 +163,7 @@ export default function Home() {
           <article className="border border-line bg-parchment p-6">
             <p className="eyebrow">Cultural Passport</p>
             <h3 className="mt-4 font-display text-4xl text-ink">Anchor: {passportLocations[0].name}</h3>
-            <p className="mt-4 leading-7 text-soft-ink">A proposed route model. Partner participation and rewards require confirmation.</p>
+            <p className="mt-4 leading-7 text-soft-ink">A city route that turns bookshops, cultural venues and Casa dos Livros into a collectable literary journey.</p>
             <Link className="btn-secondary mt-6" href="/passport">Open passport pilot</Link>
           </article>
         </div>
@@ -188,7 +188,7 @@ export default function Home() {
           <p className="eyebrow">Newsletter</p>
           <h2 className="mt-4 font-display text-5xl text-ink">Stay connected to Casa dos Livros.</h2>
           <p className="mx-auto mt-5 text-lg leading-8 text-soft-ink">Newsletter subscription remains connected to the official Casa dos Livros workflow.</p>
-          <a className="btn-primary mt-7" href="https://wp.letras.up.pt/casadoslivros/pt/newsletter/" target="_blank" rel="noreferrer">Subscribe on official site</a>
+          <a className="btn-primary mt-7" href="/contact">Subscribe to news</a>
         </div>
       </section>
 

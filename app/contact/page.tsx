@@ -11,7 +11,7 @@ export default function ContactPage() {
     <main className="pt-20">
       <section className="section-pad bg-parchment">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <StatusBadge status="Verified from official website" />
+          <StatusBadge status="Casa dos Livros" />
           <SectionHeading title="Contacts and opening hours." />
           <div className="mt-8">
             <MetadataTable rows={[
@@ -23,7 +23,7 @@ export default function ContactPage() {
               ['Official URL', officialContacts.url],
             ]} />
           </div>
-          <a className="btn-secondary mt-8" href={officialPages.contacts} target="_blank" rel="noreferrer">Official contact page</a>
+          <a className="btn-secondary mt-8" href="/visit">Plan your visit</a>
         </div>
       </section>
     </main>

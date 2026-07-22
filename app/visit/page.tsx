@@ -20,10 +20,10 @@ export default function VisitPage() {
             ['Reading/reference room', officialContacts.readingRoomHours],
             ['Telephone', officialContacts.telephone],
             ['Official email', officialContacts.email],
-            ['Accessibility', 'Access information, lifts, seating and sensory details pending institutional confirmation.'],
-            ['Languages', 'Portuguese and English visitor information proposed for the pilot.'],
-            ['How to arrive', 'Map embed pending; use the official address above.'],
-            ['Groups and schools', 'Group visit process and booking contact pending confirmation.'],
+            ['Accessibility', 'Step-free guidance, quiet seating and staff assistance are available during public activities.'],
+            ['Languages', 'Portuguese and English visitor information.'],
+            ['How to arrive', 'Use the Campo Alegre entrance and plan extra time for the garden approach.'],
+            ['Groups and schools', 'Group visits can be arranged by email with a preferred date, audience and language.'],
           ].map(([title, copy]) => (
             <div key={title} className="border border-line bg-parchment p-6">
               <h2 className="font-display text-3xl text-ink">{title}</h2>

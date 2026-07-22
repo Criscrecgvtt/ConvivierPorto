@@ -66,7 +66,7 @@ export function CollectionExplorer() {
                 <Image src={item.image} alt={`Image for ${item.title}`} fill sizes="(max-width: 768px) 100vw, 180px" className="object-cover transition duration-500 group-hover:scale-105" />
               </div>
               <div className="p-5">
-                <StatusBadge status={item.metadataStatus === 'verified' ? 'Verified' : 'Pending verification'} />
+                <StatusBadge status={item.metadataStatus === 'verified' ? 'Collection record' : 'Interpretive record'} />
                 <h3 className="mt-4 font-display text-3xl leading-tight text-ink">{item.title}</h3>
                 <p className="mt-3 leading-7 text-soft-ink">{item.shortDescription}</p>
                 <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">View record</p>

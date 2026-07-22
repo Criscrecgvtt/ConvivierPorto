@@ -11,7 +11,7 @@ export default function StoriesPage() {
       <section className="section-pad bg-warm-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <SectionHeading eyebrow="Stories" title="Institutional information at different depths.">
-            Short introductions lead to visual stories, full verified text and official source pages.
+            Short introductions lead to visual stories, collection paths, podcast episodes and research tools.
           </SectionHeading>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             <Link className="border border-line bg-parchment p-6" href="/about/palacete-burmester">

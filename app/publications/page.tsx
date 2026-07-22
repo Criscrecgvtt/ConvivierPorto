@@ -16,7 +16,7 @@ export default function PublicationsPage() {
             <Image src={officialPublication.image} alt="Casa dos Livros publication feature image" fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
           </div>
           <div>
-            <StatusBadge status="Verified from official website excerpt" />
+            <StatusBadge status="Casa dos Livros publication" />
             <SectionHeading title={officialPublication.title}>{officialPublication.details}</SectionHeading>
             <div className="mt-8">
               <MetadataTable rows={[
@@ -26,7 +26,7 @@ export default function PublicationsPage() {
                 ['Purchase', officialPublication.purchase],
               ]} />
             </div>
-            <a className="btn-secondary mt-8" href={officialPublication.sourceUrl} target="_blank" rel="noreferrer">Official publications page</a>
+            <a className="btn-secondary mt-8" href="/programme">See related programme</a>
           </div>
         </div>
       </section>

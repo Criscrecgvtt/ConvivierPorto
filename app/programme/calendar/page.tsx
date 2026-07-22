@@ -3,7 +3,7 @@ import { SectionHeading } from '@/components/editorial/SectionHeading';
 import { events } from '@/content/events';
 import { pageMetadata } from '@/lib/seo';
 
-export const metadata = pageMetadata('Programme Calendar', 'Accessible calendar/list view of proposed and upcoming Casa dos Livros programme events.', '/programme/calendar');
+export const metadata = pageMetadata('Programme Calendar', 'Accessible calendar/list view of Casa dos Livros programme events.', '/programme/calendar');
 
 export default function ProgrammeCalendarPage() {
   return (

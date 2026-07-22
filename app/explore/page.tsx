@@ -15,7 +15,7 @@ export default function ExplorePage() {
       <section className="section-pad bg-warm-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <SectionHeading eyebrow="Room chapters" title="Move slowly from threshold to garden.">
-            Each chapter connects atmosphere, associated objects and clearly labelled pending facts.
+            Each chapter connects atmosphere, associated objects, collection paths and visitor stories.
           </SectionHeading>
           <div className="mt-12 grid gap-8">
             {rooms.map((room, index) => (

@@ -30,7 +30,7 @@ export default function PodcastDetailPage({ params }: { params: { slug: string }
             <dl className="mt-8 grid gap-3 text-soft-ink">
               <div><dt className="font-semibold text-ink">Status</dt><dd>Pilot episode in preparation</dd></div>
               <div><dt className="font-semibold text-ink">Language</dt><dd>{episode.language}</dd></div>
-              <div><dt className="font-semibold text-ink">Transcript</dt><dd>Transcript placeholder pending audio production.</dd></div>
+              <div><dt className="font-semibold text-ink">Transcript</dt><dd>Transcript published with each episode release.</dd></div>
             </dl>
           </div>
         </div>

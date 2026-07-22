@@ -3,14 +3,14 @@ import { StatusBadge } from '@/components/editorial/StatusBadge';
 import { missionPillars, officialPages } from '@/content/official';
 import { pageMetadata } from '@/lib/seo';
 
-export const metadata = pageMetadata('Mission', 'Casa dos Livros mission preserved from the official website.', '/about/mission');
+export const metadata = pageMetadata('Mission', 'Casa dos Livros mission translated into research, access, collaboration and welcome.', '/about/mission');
 
 export default function MissionPage() {
   return (
     <main className="pt-20">
       <section className="section-pad bg-parchment">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <StatusBadge status="Verified from official website" />
+          <StatusBadge status="Casa dos Livros" />
           <SectionHeading title="Mission of Casa dos Livros">
             Preserved as four readable pillars from the official mission text.
           </SectionHeading>
@@ -22,7 +22,7 @@ export default function MissionPage() {
               </article>
             ))}
           </div>
-          <a className="btn-secondary mt-8" href={officialPages.mission} target="_blank" rel="noreferrer">Official mission page</a>
+          <a className="btn-secondary mt-8" href="/programme">See the programme</a>
         </div>
       </section>
     </main>

@@ -5,7 +5,7 @@ import { officialInstitution, officialPages } from '@/content/official';
 import { imageAlt, siteImages } from '@/lib/assets';
 import { pageMetadata } from '@/lib/seo';
 
-export const metadata = pageMetadata('About Casa dos Livros', 'Institutional presentation of Casa dos Livros based on the official website.', '/about/casa-dos-livros');
+export const metadata = pageMetadata('About Casa dos Livros', 'Institutional presentation of Casa dos Livros and its cultural role in Porto.', '/about/casa-dos-livros');
 
 export default function AboutCasaPage() {
   return (
@@ -13,12 +13,12 @@ export default function AboutCasaPage() {
       <EditorialHero eyebrow="Institutional presentation" title="Casa dos Livros" subtitle={officialInstitution.fullName} image={siteImages.memoryArchive} alt={imageAlt.memoryArchive} />
       <section className="section-pad bg-warm-white">
         <div className="mx-auto max-w-4xl px-6 sm:px-8">
-          <StatusBadge status="Verified from official website" />
+          <StatusBadge status="Casa dos Livros" />
           <SectionHeading title="A specialised technical and cultural centre.">
             {officialInstitution.summary}
           </SectionHeading>
           <p className="mt-6 text-lg leading-8 text-soft-ink">{officialInstitution.origin}</p>
-          <a className="btn-secondary mt-8" href={officialPages.presentation} target="_blank" rel="noreferrer">Official source</a>
+          <a className="btn-secondary mt-8" href="/collections">Explore the collections</a>
         </div>
       </section>
     </main>

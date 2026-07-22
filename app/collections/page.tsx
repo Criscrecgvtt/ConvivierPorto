@@ -19,7 +19,7 @@ export default function CollectionsPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {officialCollections.map((collection) => (
               <Link key={collection.slug} href={`/collections/${collection.slug}`} className="border border-line bg-parchment p-6">
-                <StatusBadge status="Verified from official website" />
+                <StatusBadge status="Casa dos Livros collection" />
                 <h2 className="mt-4 font-display text-4xl leading-tight text-ink">{collection.name}</h2>
                 <p className="mt-2 text-sm font-semibold text-terracotta">{collection.lifespan} {collection.role ? `· ${collection.role}` : ''}</p>
                 <p className="mt-4 leading-7 text-soft-ink">{collection.summary}</p>
@@ -44,8 +44,8 @@ export default function CollectionsPage() {
       </section>
       <section className="section-pad bg-warm-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <SectionHeading eyebrow="CONVIVER layer" title="Object discovery prototype." >
-            These cards are proposed interpretive records and remain separate from official catalogue metadata.
+          <SectionHeading eyebrow="CONVIVER layer" title="Object discovery." >
+            These interpretive records connect objects, rooms and stories with the collection experience.
           </SectionHeading>
           <div className="mt-10"><CollectionExplorer /></div>
         </div>

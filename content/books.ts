@@ -49,7 +49,7 @@ export const bookItems: BookItem[] = [
     slug: 'listening-archive-materials',
     title: 'Listening Archive Materials',
     materialType: 'object',
-    shortDescription: 'Audio and transcription materials proposed for future oral-history interpretation.',
+    shortDescription: 'Audio and transcription materials for oral-history interpretation.',
     whyItMatters: 'Sound can make archival silence legible without pretending every detail is already known.',
     metadataStatus: 'pending',
     relatedRoom: 'The Reading Rooms',

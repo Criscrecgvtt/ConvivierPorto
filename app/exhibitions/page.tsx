@@ -21,7 +21,7 @@ export default function ExhibitionsPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {exhibitions.map((title) => (
               <article key={title} className="border border-line bg-parchment p-6">
-                <StatusBadge status="Verified from official exhibition catalogues page" />
+                <StatusBadge status="Exhibition archive" />
                 <h2 className="mt-4 font-display text-4xl text-ink">{title}</h2>
               </article>
             ))}

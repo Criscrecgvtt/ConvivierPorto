@@ -29,11 +29,11 @@ export default function CollectionItemPage({ params }: { params: { slug: string 
       <main className="pt-20">
         <section className="section-pad bg-parchment">
           <div className="mx-auto max-w-5xl px-6 sm:px-8">
-            <StatusBadge status="Verified from official website" />
+            <StatusBadge status="Casa dos Livros collection" />
             <h1 className="mt-5 font-display text-6xl leading-tight text-ink">{collection.name}</h1>
             <p className="mt-3 text-lg font-semibold text-terracotta">{collection.lifespan} {collection.role ? `· ${collection.role}` : ''}</p>
             <p className="mt-6 text-lg leading-8 text-soft-ink">{collection.summary}</p>
-            <a className="btn-secondary mt-7" href={collection.sourceUrl} target="_blank" rel="noreferrer">Official source</a>
+            <a className="btn-secondary mt-7" href="/research-tools">Research tools</a>
           </div>
         </section>
         <section className="section-pad bg-warm-white">
@@ -43,18 +43,18 @@ export default function CollectionItemPage({ params }: { params: { slug: string 
               ['Processing status', collection.processingStatus],
               ['Access status', collection.accessStatus],
               ['Catalogue status', collection.catalogueStatus],
-              ['Source', collection.sourceUrl],
+              ['Research access', collection.catalogueStatus],
             ]} />
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               <div className="border border-line bg-parchment p-5">
                 <h2 className="font-display text-3xl text-ink">Related programme</h2>
                 {relatedEvents.length ? relatedEvents.map((event) => (
                   <a key={event.slug} className="mt-2 block text-forest underline" href={`/programme/events/${event.slug}`}>{event.title}</a>
-                )) : <p className="mt-2 text-soft-ink">Programme connection pending.</p>}
+                )) : <p className="mt-2 text-soft-ink">Programme connections will appear as the season expands.</p>}
               </div>
               <div className="border border-line bg-parchment p-5">
                 <h2 className="font-display text-3xl text-ink">Related podcast</h2>
-                {relatedPodcast ? <a className="mt-2 block text-forest underline" href={`/podcast/${relatedPodcast.slug}`}>{relatedPodcast.title}</a> : <p className="mt-2 text-soft-ink">Podcast connection pending.</p>}
+                {relatedPodcast ? <a className="mt-2 block text-forest underline" href={`/podcast/${relatedPodcast.slug}`}>{relatedPodcast.title}</a> : <p className="mt-2 text-soft-ink">Podcast connections will appear with new episodes.</p>}
               </div>
               <div className="border border-line bg-parchment p-5">
                 <h2 className="font-display text-3xl text-ink">Explore location</h2>
@@ -78,7 +78,7 @@ export default function CollectionItemPage({ params }: { params: { slug: string 
             <Image src={item.image} alt={`Image for ${item.title}`} fill priority sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
           </div>
           <div className="self-center">
-            <StatusBadge status={item.metadataStatus === 'verified' ? 'Verified' : 'Metadata pending verification'} />
+            <StatusBadge status={item.metadataStatus === 'verified' ? 'Collection record' : 'Interpretive record'} />
             <h1 className="mt-5 font-display text-6xl leading-tight text-ink">{item.title}</h1>
             <p className="mt-5 text-lg leading-8 text-soft-ink">{item.shortDescription}</p>
             <p className="mt-4 leading-7 text-soft-ink">{item.whyItMatters ?? 'Collection details to be confirmed by Casa dos Livros.'}</p>

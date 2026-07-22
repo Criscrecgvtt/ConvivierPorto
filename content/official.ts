@@ -1,28 +1,28 @@
 import { siteImages } from '@/lib/assets';
 
-export const officialSourceBase = 'https://wp.letras.up.pt/casadoslivros/pt';
+export const officialSourceBase = '';
 
 export const officialPages = {
-  presentation: `${officialSourceBase}/`,
-  mission: `${officialSourceBase}/missao/`,
-  collections: `${officialSourceBase}/acervos/`,
-  contacts: `${officialSourceBase}/contactos/`,
-  building: `${officialSourceBase}/palaceteburmester/`,
-  team: `${officialSourceBase}/a-equipa/`,
-  researchTools: `${officialSourceBase}/instrumentos-de-pesquisa/`,
-  libraryCatalogues: `${officialSourceBase}/catalogos-das-bibliotecas/`,
-  archivalInventories: `${officialSourceBase}/inventarios-dos-arquivos/`,
-  thematicCatalogues: `${officialSourceBase}/catalogos-tematicos-digitais/`,
-  exhibitionCatalogues: `${officialSourceBase}/catalogos-de-exposicoes-bibliograficas/`,
-  publications: `${officialSourceBase}/publicacoes-2/`,
-  newsletter: `${officialSourceBase}/newsletter/`,
+  presentation: '/about/casa-dos-livros',
+  mission: '/about/mission',
+  collections: '/collections',
+  contacts: '/contact',
+  building: '/about/palacete-burmester',
+  team: '/about/team',
+  researchTools: '/research-tools',
+  libraryCatalogues: '/catalogues',
+  archivalInventories: '/catalogues',
+  thematicCatalogues: '/catalogues',
+  exhibitionCatalogues: '/exhibitions',
+  publications: '/publications',
+  newsletter: '/contact',
 };
 
 export const officialInstitution = {
   name: 'Casa dos Livros',
   fullName: 'Casa dos Livros · Centro de Estudos da Cultura em Portugal da Universidade do Porto',
   parent: 'Faculdade de Letras da Universidade do Porto',
-  verifiedLabel: 'Verified from official website',
+  verifiedLabel: 'Casa dos Livros',
   summary:
     'The Centro de Estudos da Cultura em Portugal da Universidade do Porto was instituted in FLUP regulations in 2017 after the Vasco Graça Moura documentary collection was entrusted to the Faculty.',
   origin:
@@ -82,7 +82,7 @@ export const officialCollections: OfficialCollection[] = [
     format: 'Library, archive and objects',
     processingStatus: 'Partly catalogued; technical treatment continues',
     accessStatus: 'Consult official catalogue and access conditions',
-    catalogueStatus: 'Library catalogue available from official website',
+    catalogueStatus: 'Library catalogue available',
     sourceUrl: officialPages.collections,
   },
   {
@@ -92,9 +92,9 @@ export const officialCollections: OfficialCollection[] = [
     role: 'Poet',
     summary: 'Collection deposited by Câmara Municipal do Porto under comodato.',
     format: 'Library and documentary collection',
-    processingStatus: 'Technical treatment noted by official site',
+    processingStatus: 'Technical treatment in progress',
     accessStatus: 'Consult official catalogue and access conditions',
-    catalogueStatus: 'Library catalogue available from official website',
+    catalogueStatus: 'Library catalogue available',
     sourceUrl: officialPages.collections,
   },
   {
@@ -106,7 +106,7 @@ export const officialCollections: OfficialCollection[] = [
     format: 'Manuscripts, archive and library materials',
     processingStatus: 'Official inventory/catalogue tools available for parts of the collection',
     accessStatus: 'Some archival consultation is conditioned and requires authorisation',
-    catalogueStatus: 'Library catalogue and archive inventory referenced by official website',
+    catalogueStatus: 'Library catalogue and archive inventory available',
     sourceUrl: officialPages.collections,
   },
   ...[
@@ -126,7 +126,7 @@ export const officialCollections: OfficialCollection[] = [
     name,
     summary: 'Official collection listed by Casa dos Livros. Detailed description should be synchronised from the institutional catalogue workflow.',
     format: 'Bibliographic and/or documentary collection',
-    processingStatus: 'Pending detailed migration from official source',
+    processingStatus: 'Collection profile in development',
     accessStatus: 'Consult Casa dos Livros for current access conditions',
     catalogueStatus: 'See official catalogue and research tools',
     sourceUrl: officialPages.collections,
@@ -138,25 +138,25 @@ export const researchTools = [
     title: 'Library catalogues',
     description: 'Catalogues for the bibliographic collections preserved at Casa dos Livros.',
     href: officialPages.libraryCatalogues,
-    status: 'Verified from official website',
+    status: 'Research access',
   },
   {
     title: 'Archival inventories',
     description: 'Inventories for archival fonds that completed technical treatment. Consultation may be conditioned and require authorisation.',
     href: officialPages.archivalInventories,
-    status: 'Verified from official website',
+    status: 'Research access',
   },
   {
     title: 'Digital thematic catalogues',
     description: 'Digital study catalogues for specific themes inside the collections.',
     href: officialPages.thematicCatalogues,
-    status: 'Verified from official website',
+    status: 'Research access',
   },
   {
     title: 'Bibliographic exhibition catalogues',
     description: 'Digital guides and catalogues preserving the memory of temporary bibliographic exhibitions.',
     href: officialPages.exhibitionCatalogues,
-    status: 'Verified from official website',
+    status: 'Research access',
   },
 ];
 
@@ -166,7 +166,7 @@ export const officialPublication = {
     'Moura, Vasco Graça · Porto: Universidade do Porto, Faculdade de Letras, Casa dos Livros; Modo de Ler, 2025 · 90 p. · Coleção da Casa, 3.',
   isbn: '978-989-9193-53-6',
   price: '12,50 euros; 25,00 euros special numbered and signed edition',
-  availability: 'In stock on official website excerpt',
+  availability: 'In stock',
   purchase:
     'Available through the FLUP Publications Unit via upub@letras.up.pt or in person at Casa dos Livros.',
   sourceUrl: officialPages.publications,

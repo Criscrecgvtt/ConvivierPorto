@@ -92,7 +92,7 @@ export const ecosystemGroups = [
       ['Explore the House', '/explore-the-house'],
       ['Podcast', '/podcast'],
       ['QR stories', '/stories'],
-      ['Newsletter', 'https://wp.letras.up.pt/casadoslivros/pt/newsletter/'],
+      ['Newsletter', '/contact'],
     ],
   },
   {
@@ -111,7 +111,7 @@ export const ecosystemGroups = [
     items: [
       ['Route', '/passport'],
       ['Stamps', '/passport'],
-      ['Proposed partners', '/partners'],
+      ['Partner network', '/partners'],
       ['Rewards', '/passport'],
       ['Visitor progress', '/passport'],
     ],
