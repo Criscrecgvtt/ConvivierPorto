@@ -19,7 +19,7 @@ export default function AboutPage() {
               ['About Casa dos Livros', '/about/casa-dos-livros', officialInstitution.summary],
               ['Mission', '/about/mission', 'The complete mission translated into four official pillars.'],
               ['Palacete Burmester', '/about/palacete-burmester', 'Building history and architectural context.'],
-              ['Team', '/about/team', 'Official institutional team and CONVIVER project-team placeholder.'],
+              ['Team', '/about/team', 'Official institutional team and CONVIVER project context.'],
             ].map(([title, href, text]) => (
               <Link key={href} href={href} className="border border-line bg-parchment p-6">
                 <h2 className="font-display text-4xl text-ink">{title}</h2>

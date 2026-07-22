@@ -1,32 +1,32 @@
 import { siteImages } from '@/lib/assets';
 
-export const officialSourceBase = '';
+export const officialSourceBase = 'https://wp.letras.up.pt/casadoslivros/en';
 
 export const officialPages = {
-  presentation: '/about/casa-dos-livros',
-  mission: '/about/mission',
-  collections: '/collections',
-  contacts: '/contact',
-  building: '/about/palacete-burmester',
-  team: '/about/team',
-  researchTools: '/research-tools',
-  libraryCatalogues: '/catalogues',
-  archivalInventories: '/catalogues',
-  thematicCatalogues: '/catalogues',
-  exhibitionCatalogues: '/exhibitions',
-  publications: '/publications',
-  newsletter: '/contact',
+  presentation: `${officialSourceBase}/presentation/`,
+  mission: `${officialSourceBase}/mission/`,
+  collections: `${officialSourceBase}/collections/`,
+  contacts: `${officialSourceBase}/contacts/`,
+  building: `${officialSourceBase}/building/`,
+  team: `${officialSourceBase}/team/`,
+  researchTools: `${officialSourceBase}/research-tools/`,
+  libraryCatalogues: `${officialSourceBase}/library-catalogues/`,
+  archivalInventories: `${officialSourceBase}/archival-inventories/`,
+  thematicCatalogues: `${officialSourceBase}/digital-thematic-catalogues/`,
+  exhibitionCatalogues: `${officialSourceBase}/bibliographic-exhibition-catalogues/`,
+  publications: `${officialSourceBase}/publications/`,
+  newsletter: `${officialSourceBase}/newsletter/`,
 };
 
 export const officialInstitution = {
   name: 'Casa dos Livros',
-  fullName: 'Casa dos Livros · Centro de Estudos da Cultura em Portugal da Universidade do Porto',
+  fullName: 'Casa dos Livros - Centro de Estudos da Cultura em Portugal da Universidade do Porto',
   parent: 'Faculdade de Letras da Universidade do Porto',
   verifiedLabel: 'Casa dos Livros',
   summary:
-    'The Centro de Estudos da Cultura em Portugal da Universidade do Porto was instituted in FLUP regulations in 2017 after the Vasco Graça Moura documentary collection was entrusted to the Faculty.',
+    'Casa dos Livros is the public-facing home of the Centro de Estudos da Cultura em Portugal da Universidade do Porto, created within the Faculdade de Letras after the Vasco Graca Moura documentary collection was entrusted to the Faculty.',
   origin:
-    'The name Casa dos Livros honours Vasco Graça Moura and re-signifies the name he gave to his own place of work and creation at Eira do Catavento, in Almeirim.',
+    'The name honours Vasco Graca Moura and reinterprets the expression he used for his own place of work and creation at Eira do Catavento, in Almeirim.',
   sourceUrl: officialPages.presentation,
 };
 
@@ -37,7 +37,7 @@ export const missionPillars = [
   },
   {
     title: 'Access and communication',
-    text: 'Promote broad access, communication and cultural valuation through exhibitions, courses, tertúlias, guided visits and related activities.',
+    text: 'Promote broad access, communication and cultural value through exhibitions, courses, conversation gatherings, guided visits and related activities.',
   },
   {
     title: 'Collaboration with cultural institutions',
@@ -50,12 +50,12 @@ export const missionPillars = [
 ];
 
 export const officialContacts = {
-  address: 'Palacete Burmester · Rua do Campo Alegre, 1055, 4150-181 Porto',
+  address: 'Palacete Burmester - Rua do Campo Alegre, 1055, 4150-181 Porto',
   buildingHours: 'Monday to Friday, 10:30-12:30 and 14:30-17:30. Closed on holidays.',
   readingRoomHours: 'Monday to Friday, 14:30-17:30. Closed on holidays.',
   telephone: '(+351) 226 077 191',
   email: 'casadoslivros@letras.up.pt',
-  url: 'www.letras.up.pt/casadoslivros',
+  url: officialSourceBase,
   sourceUrl: officialPages.contacts,
 };
 
@@ -75,7 +75,7 @@ export type OfficialCollection = {
 export const officialCollections: OfficialCollection[] = [
   {
     slug: 'vasco-graca-moura',
-    name: 'Vasco Graça Moura',
+    name: 'Vasco Graca Moura',
     lifespan: '1942-2014',
     role: 'Writer, translator and cultural figure',
     summary: 'Foundational documentary legacy of books, journals, manuscripts, documentation in multiple supports and objects.',
@@ -87,10 +87,10 @@ export const officialCollections: OfficialCollection[] = [
   },
   {
     slug: 'eugenio-de-andrade',
-    name: 'Eugénio de Andrade',
+    name: 'Eugenio de Andrade',
     lifespan: '1923-2005',
     role: 'Poet',
-    summary: 'Collection deposited by Câmara Municipal do Porto under comodato.',
+    summary: 'Collection deposited by Camara Municipal do Porto under a loan agreement.',
     format: 'Library and documentary collection',
     processingStatus: 'Technical treatment in progress',
     accessStatus: 'Consult official catalogue and access conditions',
@@ -99,10 +99,10 @@ export const officialCollections: OfficialCollection[] = [
   },
   {
     slug: 'julio-maria-dos-reis-pereira-saul-dias',
-    name: 'Júlio Maria dos Reis Pereira / Saúl Dias',
+    name: 'Julio Maria dos Reis Pereira / Saul Dias',
     lifespan: '1902-1983',
     role: 'Poet and painter',
-    summary: 'Collection associated with the poet and painter, brother of José Régio and linked to presença.',
+    summary: 'Collection associated with the poet and painter, brother of Jose Regio and linked to presenca.',
     format: 'Manuscripts, archive and library materials',
     processingStatus: 'Official inventory/catalogue tools available for parts of the collection',
     accessStatus: 'Some archival consultation is conditioned and requires authorisation',
@@ -110,13 +110,13 @@ export const officialCollections: OfficialCollection[] = [
     sourceUrl: officialPages.collections,
   },
   ...[
-    'Ana Luísa Amaral',
+    'Ana Luisa Amaral',
     'Albano Martins',
     'Herberto Helder',
-    'Manuel António Pina',
-    'Maria Virgínia Monteiro',
-    'Óscar Lopes',
-    'António Cortesão',
+    'Manuel Antonio Pina',
+    'Maria Virginia Monteiro',
+    'Oscar Lopes',
+    'Antonio Cortesao',
     'Humberto Baquero Moreno',
     'Francisco Laranjo',
     'Paulo Tunhas',
@@ -178,7 +178,7 @@ export const buildingHistory = {
   summary:
     'The Palacete Burmester stands in the Campo Alegre area, connected to the former Quinta Grande, acquired in 1802 by Jean Pierre Salabert and later divided into several properties.',
   note:
-    'The official building page describes the relationship between Quinta do Salabert, Casa Andresen, Palacete Burmester and neighbouring Campo Alegre properties.',
+    'Its history links Quinta do Salabert, Casa Andresen and neighbouring Campo Alegre estates before the building was restored as a literary and academic house.',
   sourceUrl: officialPages.building,
 };
 

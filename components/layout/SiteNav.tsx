@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const groups = [
   {
@@ -48,12 +49,32 @@ const groups = [
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const transparentAtTop = pathname === '/' && !scrolled && !open;
+
+  useEffect(() => {
+    const updateScrolled = () => setScrolled(window.scrollY > 56);
+    updateScrolled();
+    window.addEventListener('scroll', updateScrolled, { passive: true });
+    return () => window.removeEventListener('scroll', updateScrolled);
+  }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-warm-white/15 bg-forest-deep/88 text-warm-white backdrop-blur-md">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 text-warm-white transition-all duration-300 ${
+        transparentAtTop
+          ? 'border-b border-warm-white/18 bg-transparent'
+          : 'border-b border-warm-white/12 bg-forest-deep/94 shadow-soft backdrop-blur-md'
+      }`}
+    >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-8 lg:px-12" aria-label="Main navigation">
         <Link href="/" className="leading-tight">
-          <span className="block font-display text-2xl tracking-wide">Casa dos Livros</span>
+          <span className="block font-display text-2xl tracking-wide drop-shadow-sm">Casa dos Livros</span>
           <span className="block text-[0.62rem] uppercase tracking-[0.2em] text-muted-gold">CONVIVER experience layer</span>
         </Link>
         <div className="hidden items-center gap-5 lg:flex">
@@ -74,9 +95,10 @@ export function SiteNav() {
         </div>
         <button
           type="button"
-          className="border border-warm-white/30 px-3 py-2 text-sm uppercase tracking-[0.18em] lg:hidden"
+          className="border border-warm-white/30 bg-forest-deep/80 px-3 py-2 text-sm uppercase tracking-[0.18em] lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
+          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
           onClick={() => setOpen((value) => !value)}
         >
           Menu

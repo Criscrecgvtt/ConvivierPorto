@@ -1,9 +1,9 @@
 import { SectionHeading } from '@/components/editorial/SectionHeading';
 import { StatusBadge } from '@/components/editorial/StatusBadge';
-import { officialPages, officialTeam } from '@/content/official';
+import { officialTeam } from '@/content/official';
 import { pageMetadata } from '@/lib/seo';
 
-export const metadata = pageMetadata('Team', 'Official Casa dos Livros team and CONVIVER project-team placeholder.', '/about/team');
+export const metadata = pageMetadata('Team', 'Official Casa dos Livros team and CONVIVER project-team context.', '/about/team');
 
 export default function TeamPage() {
   return (

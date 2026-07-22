@@ -47,7 +47,7 @@ export default function ProgrammeEventDetailPage({ params }: { params: { slug: s
             <p className="mt-5 text-lg leading-8 text-soft-ink">{event.description}</p>
             {event.category === 'cinema' ? <p className="mt-4 font-semibold text-terracotta">Seasonal cinema includes licensing, captions, space planning and a weather fallback.</p> : null}
             <div className="mt-7 flex flex-wrap gap-3">
-              <AddToCalendarButton event={event} />
+              {event.date ? <AddToCalendarButton event={event} /> : <StatusBadge status="Dates announced soon" />}
               {series ? <Link className="btn-secondary" href={`/programme/series/${series.slug}`}>Series page</Link> : null}
               {event.passportStampEligible ? <Link className="btn-primary" href="/passport">Passport details</Link> : null}
             </div>
@@ -58,7 +58,7 @@ export default function ProgrammeEventDetailPage({ params }: { params: { slug: s
         <div className="mx-auto grid max-w-7xl gap-8 px-6 sm:px-8 lg:grid-cols-[1fr_0.8fr] lg:px-12">
           <MetadataTable rows={[
             ['Date', event.date ? formatEventDate(event.date) : 'Date announced soon'],
-            ['Time', event.time],
+            ['Time', event.time ?? 'Subject to programme availability'],
             ['Duration', event.duration],
             ['Language', event.language],
             ['Location', event.location],
@@ -66,7 +66,7 @@ export default function ProgrammeEventDetailPage({ params }: { params: { slug: s
             ['Audience', event.audiences.join(', ')],
             ['Capacity', event.capacity ? `${event.capacity} seats` : 'Flexible'],
             ['Price', event.priceLabel],
-            ['Verification', event.institutionalVerification],
+            ['Verification', event.institutionalVerification === 'proposed' ? 'Programme concept, pending institutional confirmation' : event.institutionalVerification],
           ]} />
           <aside className="space-y-5">
             <div className="border border-line bg-parchment p-5">

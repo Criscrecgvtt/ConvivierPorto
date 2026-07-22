@@ -100,7 +100,7 @@ export default function CollectionItemPage({ params }: { params: { slug: string 
           ]} />
           <div className="mt-10 border border-line bg-parchment p-6">
             <h2 className="font-display text-4xl text-ink">Citation and download</h2>
-            <p className="mt-3 leading-7 text-soft-ink">Citation, IIIF, downloadable metadata and rights statements are placeholders until verified catalogue records are supplied.</p>
+            <p className="mt-3 leading-7 text-soft-ink">Citation, IIIF, downloadable metadata and rights statements will be connected when verified catalogue records are supplied.</p>
           </div>
         </div>
       </section>
